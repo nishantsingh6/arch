@@ -18,16 +18,29 @@ import project16 from '../assets/proj16.jpg';
 import project17 from '../assets/proj17.jpg';
 import project18 from '../assets/proj18.jpg';
 import project19 from '../assets/proj19.jpg';
-import project20 from '../assets/proj20.jpg'; 
-
+import project20 from '../assets/proj20.jpg';
 
 import { motion } from 'framer-motion';
 import { slideUpVariants, zoomInVariants } from './animation';
 
 const Portfolio = () => {
-  const projects = [
-    project1, project2, project3, project4,
-    project5, project6, project7, project8,project9,project10,project11,project12,project13,project14,project15,project16,project17,project18,project19,project20
+  const governmentProjects = [
+    { image: project1, title: "Smart City Development", description: "A government initiative to develop sustainable smart cities, integrating technology for better urban living." },
+    { image: project2, title: "Public Healthcare Infrastructure", description: "Improving healthcare facilities across rural areas, aiming to provide better health services to underserved populations." },
+    { image: project3, title: "National Roadways Expansion", description: "The construction and expansion of national roadways to facilitate faster and safer transportation for citizens." },
+  ];
+
+  const privateProjects = [
+    { image: project4, title: "Luxury Apartment Complex", description: "A luxury residential project featuring modern amenities and green spaces in the heart of the city." },
+    { image: project5, title: "Corporate Office Tower", description: "A high-end office space designed for a global corporation, focused on sustainability and energy efficiency." },
+    { image: project6, title: "Retail Store Design", description: "A flagship retail store for a luxury brand, combining high-end design with functional retail experience." },
+  ];
+
+  const otherProjects = [
+    { image: project7, title: "Community Park Revitalization", description: "A project to transform an underused park into a vibrant community space with playgrounds, gardens, and seating areas." },
+    { image: project8, title: "Artist Portfolio Website", description: "A personal website for a renowned local artist, showcasing their portfolio with a minimalist design." },
+    { image: project9, title: "E-Learning Platform for Non-Profits", description: "A platform designed to help non-profits offer online learning programs to underserved communities." },
+    { image: project10, title: "Sustainable Urban Farming", description: "An urban farming initiative that focuses on growing organic produce in city spaces, helping reduce food deserts." },
   ];
 
   return (
@@ -48,26 +61,91 @@ const Portfolio = () => {
         <div className="w-[120px] h-[6px] bg-green-500" />
       </motion.div>
 
-      {/* Projects Grid */}
+      {/* Government Projects Section */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={zoomInVariants}
-        className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-16"
+        className="w-[90%] mx-auto pb-16"
       >
-        {projects.map((img, index) => (
-          <motion.div
-            key={index}
-            variants={zoomInVariants}
-            className="w-full h-[250px] overflow-hidden rounded-md shadow-md"
-          >
-            <img
-              src={img}
-              alt={`Project ${index + 1}`}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            />
-          </motion.div>
-        ))}
+        <h2 className="text-white text-2xl font-semibold mb-4">Government Projects</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {governmentProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={zoomInVariants}
+              className="relative w-full h-[300px] overflow-hidden rounded-md shadow-md"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+                <h3 className="font-bold text-lg">{project.title}</h3>
+                <p className="text-sm">{project.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Private Projects Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={zoomInVariants}
+        className="w-[90%] mx-auto pb-16"
+      >
+        <h2 className="text-white text-2xl font-semibold mb-4">Hotels & Resedency Projects</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {privateProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={zoomInVariants}
+              className="relative w-full h-[300px] overflow-hidden rounded-md shadow-md"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+                <h3 className="font-bold text-lg">{project.title}</h3>
+                <p className="text-sm">{project.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Other Projects Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={zoomInVariants}
+        className="w-[90%] mx-auto pb-16"
+      >
+        <h2 className="text-white text-2xl font-semibold mb-4">Other Projects</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {otherProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={zoomInVariants}
+              className="relative w-full h-[300px] overflow-hidden rounded-md shadow-md"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+                <h3 className="font-bold text-lg">{project.title}</h3>
+                <p className="text-sm">{project.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </div>
   );

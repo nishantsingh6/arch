@@ -12,10 +12,8 @@ const Services = () => {
         variants={slideUpVariants}
         className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6"
       >
-        <h2 className="text-green-500 text-2xl font-semibold">SPECIAL OFFER</h2>
-
         <h1 className="text-black uppercase text-[32px] md:text-[40px] font-bold text-center">
-          Our Best Services
+        Services We Offer
         </h1>
 
         <div className="w-[120px] h-[6px] bg-green-500"></div>
