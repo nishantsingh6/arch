@@ -30,17 +30,22 @@ const Portfolio = () => {
     { image: project3, title: "National Roadways Expansion", description: "The construction and expansion of national roadways to facilitate faster and safer transportation for citizens." },
   ];
 
-  const privateProjects = [
-    { image: project4, title: "Luxury Apartment Complex", description: "A luxury residential project featuring modern amenities and green spaces in the heart of the city." },
-    { image: project5, title: "Corporate Office Tower", description: "A high-end office space designed for a global corporation, focused on sustainability and energy efficiency." },
-    { image: project6, title: "Retail Store Design", description: "A flagship retail store for a luxury brand, combining high-end design with functional retail experience." },
+  const hotelProjects = [
+    { image: project4, title: "Luxury Hotel Resort", description: "A luxurious resort offering top-notch services, stunning views, and premium amenities for a world-class stay." },
+    { image: project5, title: "Eco-Friendly Hotel", description: "A hotel built with sustainable materials, integrating green technologies for an eco-conscious guest experience." },
+    { image: project6, title: "Boutique Hotel", description: "A stylish boutique hotel that emphasizes comfort and personalized experiences with a modern design." },
   ];
 
-  const otherProjects = [
-    { image: project7, title: "Community Park Revitalization", description: "A project to transform an underused park into a vibrant community space with playgrounds, gardens, and seating areas." },
-    { image: project8, title: "Artist Portfolio Website", description: "A personal website for a renowned local artist, showcasing their portfolio with a minimalist design." },
-    { image: project9, title: "E-Learning Platform for Non-Profits", description: "A platform designed to help non-profits offer online learning programs to underserved communities." },
-    { image: project10, title: "Sustainable Urban Farming", description: "An urban farming initiative that focuses on growing organic produce in city spaces, helping reduce food deserts." },
+  const residentialProjects = [
+    { image: project7, title: "Modern Family Home", description: "A contemporary residential design focused on family comfort, energy efficiency, and aesthetic appeal." },
+    { image: project8, title: "Urban Luxury Condos", description: "Luxury condo units designed to provide city living with premium amenities and a stunning view." },
+    { image: project9, title: "Eco-Friendly Housing", description: "A residential development that focuses on sustainable living with energy-efficient features and green architecture." },
+  ];
+
+  const factoryProjects = [
+    { image: project10, title: "Automobile Factory Expansion", description: "Expanding an existing automobile factory to accommodate new production lines and cutting-edge manufacturing technology." },
+    { image: project11, title: "Food Processing Plant", description: "Designing a modern food processing facility with a focus on hygiene, automation, and sustainability." },
+    { image: project12, title: "Textile Manufacturing Facility", description: "Building a textile factory with state-of-the-art machinery to streamline production and reduce waste." },
   ];
 
   return (
@@ -90,16 +95,16 @@ const Portfolio = () => {
         </div>
       </motion.div>
 
-      {/* Private Projects Section */}
+      {/* Hotel Projects Section */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={zoomInVariants}
         className="w-[90%] mx-auto pb-16"
       >
-        <h2 className="text-white text-2xl font-semibold mb-4">Hotels & Resedency Projects</h2>
+        <h2 className="text-white text-2xl font-semibold mb-4">Hotel Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {privateProjects.map((project, index) => (
+          {hotelProjects.map((project, index) => (
             <motion.div
               key={index}
               variants={zoomInVariants}
@@ -119,16 +124,45 @@ const Portfolio = () => {
         </div>
       </motion.div>
 
-      {/* Other Projects Section */}
+      {/* Residential Projects Section */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={zoomInVariants}
         className="w-[90%] mx-auto pb-16"
       >
-        <h2 className="text-white text-2xl font-semibold mb-4">Other Projects</h2>
+        <h2 className="text-white text-2xl font-semibold mb-4">Residential Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {otherProjects.map((project, index) => (
+          {residentialProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={zoomInVariants}
+              className="relative w-full h-[300px] overflow-hidden rounded-md shadow-md"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+                <h3 className="font-bold text-lg">{project.title}</h3>
+                <p className="text-sm">{project.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Factory Projects Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={zoomInVariants}
+        className="w-[90%] mx-auto pb-16"
+      >
+        <h2 className="text-white text-2xl font-semibold mb-4">Factory Projects</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {factoryProjects.map((project, index) => (
             <motion.div
               key={index}
               variants={zoomInVariants}
