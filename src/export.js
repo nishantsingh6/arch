@@ -1,7 +1,7 @@
 import reno from '../src/assets/flatreno.jpg'
 import interior from  '../src/assets/intertior.webp'
 import paint from  '../src/assets/painting.jpeg'
-import kitch from '../src/assets/Kitchen.jpg'
+import kitch from '../src/assets/kitchen.jpg'
 import constrcuct from  '../src/assets/proj12.jpg';
 import glass from  '../src/assets/glass.jpeg'
 
