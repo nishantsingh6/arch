@@ -13,7 +13,7 @@ const Services = () => {
         className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6"
       >
         <h1 className="text-black uppercase text-[32px] md:text-[40px] font-bold text-center">
-        Services We Offer
+          Services We Offer
         </h1>
 
         <div className="w-[120px] h-[6px] bg-green-500"></div>
@@ -29,14 +29,14 @@ const Services = () => {
             <motion.div
               key={index}
               variants={zoomInVariants}
-              className="flex items-start gap-5 p-6 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white"
+              className="flex flex-col items-center gap-6 p-6 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white"
             >
               <img
-                src={item.icon}
-                alt={`${item.title} icon`}
-                className="w-[60px] h-[60px] border-2 border-green-500 rounded-lg p-2 hover:bg-green-500 transition duration-300"
+                src={item.img} // Change icon to img
+                alt={`${item.title} image`} // Fixed alt tag
+                className="w-[200px] h-[200px] object-cover rounded-lg mb-4 hover:scale-105 transition-all duration-300"
               />
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 text-center">
                 <h3 className="text-xl font-bold text-black">{item.title}</h3>
                 <p className="text-[16px] text-gray-700">{item.about}</p>
               </div>

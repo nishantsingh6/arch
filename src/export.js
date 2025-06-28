@@ -1,9 +1,9 @@
-import building from "../src/assets/building.svg";
-import construction from "../src/assets/construction.svg";
-import design from "../src/assets/design.svg";
-import document from "../src/assets/document.svg";
-import paint from "../src/assets/paint.svg";
-import support from "../src/assets/support.svg";
+import reno from '../src/assets/flatreno.jpg'
+import interior from  '../src/assets/intertior.webp'
+import paint from  '../src/assets/painting.jpeg'
+import kitch from '../src/assets/Kitchen.jpg'
+import constrcuct from  '../src/assets/proj12.jpg';
+import glass from  '../src/assets/glass.jpeg'
 
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { MdOutlineDesignServices } from "react-icons/md";
@@ -13,35 +13,36 @@ import { FaSitemap } from "react-icons/fa";
 import client1 from "../src/assets/client1.png";
 import client2 from "../src/assets/client2.png";
 import client3 from "../src/assets/client3.png";
+import { img } from "framer-motion/client";
 
 export const allservices = [
   {
-    icon: building,
+    img: reno,
     title: "Flat Renovation",
     about: "Complete renovation solutions for flats, ensuring modern aesthetics and durability.",
   },
   {
-    icon: construction,
+    img: kitch,
     title: "Modular Kitchen & Wardrobes",
     about: "Design and installation of modular kitchens and wardrobes with customized fittings.",
   },
   {
-    icon: design,
+    img: constrcuct,
     title: "Construction (New & Remodeling)",
     about: "End-to-end construction services for new projects and remodeling of existing structures.",
   },
   {
-    icon: document,
+    img: interior,
     title: "Interior & Exterior Design",
     about: "Professional design services to enhance both interior and exterior spaces.",
   },
   {
-    icon: paint,
+    img: paint,
     title: "Painting & Putty Work",
     about: "High-quality painting and wall putty work to give your space a fresh look.",
   },
   {
-    icon: support,
+    img: glass,
     title: "Aluminium, Steel, MS & Glass Work",
     about: "Fabrication and installation services for aluminium, steel, mild steel, and glass materials.",
   },
