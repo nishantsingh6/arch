@@ -32,8 +32,8 @@ const Services = () => {
               className="flex flex-col items-center gap-6 p-6 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white"
             >
               <img
-                src={item.img} // Change icon to img
-                alt={`${item.title} image`} // Fixed alt tag
+                src={item.img} 
+                alt={`${item.title} image`} 
                 className="w-[200px] h-[200px] object-cover rounded-lg mb-4 hover:scale-105 transition-all duration-300"
               />
               <div className="flex flex-col gap-2 text-center">
