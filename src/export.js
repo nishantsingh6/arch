@@ -52,27 +52,27 @@ export const allservices = [
 export const planning = [
   {
     icon: IoDocumentTextSharp,
-    title: "planning",
+    title: "Planning",
     about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida cursus",
+      "We begin by understanding your vision and translating it into a strategic plan that balances creativity, functionality, and budget.",
   },
   {
     icon: MdOutlineDesignServices,
-    title: "design",
+    title: "Design",
     about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida cursus",
+      "Our team crafts unique, innovative designs tailored to your needs—blending aesthetics with structural feasibility and modern trends.",
   },
   {
     icon: FaRegBuilding,
-    title: "building",
+    title: "Building",
     about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida cursus",
+      "From foundation to finish, we bring designs to life using high-quality materials, skilled craftsmanship, and efficient project management.",
   },
   {
     icon: FaSitemap,
-    title: "finish",
+    title: "Finish",
     about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida cursus",
+      "We handle the final touches—detailing, inspection, and handover—ensuring every space is polished, functional, and ready to impress.",
   },
 ];
 

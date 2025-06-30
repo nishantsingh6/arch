@@ -3,6 +3,7 @@ import heroimg from '../assets/heroimg.png';
 import backgroundImage from '../assets/homeimg.webp';
 import { motion } from 'framer-motion';
 import { slideUpVariants, zoomInVariants } from './animation';
+import { Link } from 'react-scroll';
 
 const Hero = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -17,7 +18,7 @@ const Hero = () => {
     Let’s build something extraordinary together!
   `;
 
-  const truncatedDescription = description.slice(0, 250) + "...";
+  const truncatedDescription = description.slice(0, 250) + '...';
 
   return (
     <div
@@ -32,8 +33,12 @@ const Hero = () => {
         variants={slideUpVariants}
         className="lg:w-[60%] w-full flex flex-col items-start justify-center gap-6"
       >
-        <h2 className="text-green-500 text-2xl font-semibold">
-          Raadhika Architectural
+        <h2 className="text-green-500 text-2xl font-semibold leading-snug">
+          Welcome to Raadhika Architectural Services
+          <br />
+          <span className="text-green-400 block">
+            Design with Purpose, Build with Precision
+          </span>
         </h2>
 
         <h1 className="text-white uppercase text-[40px] md:text-[50px] font-bold leading-tight">
@@ -60,12 +65,21 @@ const Hero = () => {
             {isExpanded ? 'SHOW LESS' : 'READ MORE'}
           </motion.button>
 
-          <motion.button
-            variants={zoomInVariants}
-            className="border-2 border-white hover:border-green-500 text-white px-8 py-3 rounded-lg font-bold transition-all duration-300"
+          {/* Reach Us button visible on all screens */}
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
           >
-            Reach Us
-          </motion.button>
+            <motion.button
+              variants={zoomInVariants}
+              className="border-2 border-white hover:border-green-500 text-white px-8 py-3 rounded-lg font-bold transition-all duration-300"
+            >
+              Reach Us
+            </motion.button>
+          </Link>
         </motion.div>
       </motion.div>
 

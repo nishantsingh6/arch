@@ -53,7 +53,7 @@ At Raadhika Architectural Services, we believe that every space has the potentia
           onClick={handleToggle}
           className="bg-green-500 hover:bg-white hover:text-black px-8 py-3 rounded-lg text-black font-bold transition-all duration-300"
         >
-          {showFullText ? 'READ LESS' : 'READ MORE'}
+          {showFullText ? 'SHOW LESS' : 'SHOW MORE'}
         </motion.button>
       </motion.div>
     </div>

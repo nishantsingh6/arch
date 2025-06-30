@@ -108,14 +108,24 @@ const Portfolio = () => {
       {/* Modal */}
       {selectedImage && (
         <div
-          onClick={closeModal}
-          className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 cursor-pointer"
+          className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
         >
-          <img
-            src={selectedImage}
-            alt="Full View"
-            className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl"
-          />
+          <div className="relative max-w-[90%] max-h-[90%]">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-[-20px] right-[-20px] bg-white text-black rounded-full p-2 text-xl shadow-lg hover:bg-red-500 hover:text-white transition-all"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+
+            <img
+              src={selectedImage}
+              alt="Full View"
+              className="w-full h-full object-contain rounded-lg shadow-2xl"
+            />
+          </div>
         </div>
       )}
     </div>
