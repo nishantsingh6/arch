@@ -1,38 +1,43 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { slideUpVariants, zoomInVariants } from './animation';
-import aboutImage from '../assets/kitchen.jpg'; // replace with correct path
+import aboutImage from '../assets/IAS.jpg'; // make sure the path is correct
 
 const About = () => {
   const [showFullText, setShowFullText] = useState(false);
   const handleToggle = () => setShowFullText(prev => !prev);
 
-  const fullText = `Raadhika Architectural Services specializes in creating stylish, functional, and innovative interior designs for residential and commercial spaces. We are committed to delivering quality, safety, and exceptional craftsmanship in every project, ensuring client satisfaction worldwide. With years of experience in the design industry, we understand the importance of both aesthetics and functionality. Our team works closely with each client to bring their vision to life, creating environments that are both beautiful and practical.
-At Raadhika Architectural Services, we believe that every space has the potential to tell a unique story. Our designs are driven by the principles of creativity, functionality, and sustainability. We pay close attention to every detail, from layout to lighting, ensuring the final result is an inspiring, comfortable, and efficient environment that reflects our client's needs and personality.`;
+  const fullText = `जी नमस्कार! मेरा नाम आनंद सिंह है और मैं राधिका आर्किटेक्चरल सर्विसेज का संस्थापक हूँ! घर का निर्माण हो या किसी भी प्रकार का रेनोवेशन सम्बन्धी कोई कार्य हो सभी कार्यों को कुशलता पूर्वक किया जाता है एवं सिर्फ कार्य ही बल्कि हमेशा के लिए एक अच्छा मजबूत सम्बन्ध ! हमारे द्वारा सभी प्रकार की सेवाओं को बहुत ही उचित तरीके से प्रदान किया जाता है!`;
 
-  const previewText = fullText.slice(0, 450) + '...';
+  const previewText = fullText.slice(0, 250) + '...';
 
   return (
-    <section id="about" className="w-full">
-      {/* Top Section (Image + Intro Text) */}
-      <div className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 py-12 bg-white">
-        <img
-          src={aboutImage}
-          alt="Interior"
-          className="w-full lg:w-1/2 rounded shadow-md"
-        />
-        <div className="lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
-          <h2 className="text-yellow-700 font-semibold text-sm mb-2 uppercase">
+    <section id="about" className="w-full bg-white py-12 px-4 sm:px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
+        
+        {/* Image */}
+        <div className="w-full lg:w-1/2">
+          <img
+            src={aboutImage}
+            alt="Interior"
+            className="w-full h-auto object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
+        {/* Text Content */}
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-yellow-700 font-semibold text-sm mb-2 uppercase tracking-wide">
             About Raadhika Architectural Services
           </h2>
-          <h1 className="text-4xl font-bold leading-tight mb-4 text-gray-900">
+          <h1 className="text-3xl sm:text-4xl font-bold leading-snug mb-6 text-gray-900">
             Transforming Spaces with Style and Elegance
           </h1>
-          <p className="mb-4 text-gray-600">
-           {showFullText ? fullText : previewText}
+          <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
+            {showFullText ? fullText : previewText}
           </p>
-          <button className="bg-yellow-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-yellow-700 transition duration-300" onClick={handleToggle}>
-             {showFullText ? 'SHOW LESS' : 'SHOW MORE'}
+          <button
+            onClick={handleToggle}
+            className="bg-yellow-600 text-white font-semibold px-5 py-2.5 rounded-full hover:bg-yellow-700 transition-all duration-300 text-sm sm:text-base"
+          >
+            {showFullText ? 'SHOW LESS' : 'SHOW MORE'}
           </button>
         </div>
       </div>

@@ -1,19 +1,14 @@
 import reno from '../src/assets/flatreno.jpg'
 import interior from  '../src/assets/intertior.webp'
 import paint from  '../src/assets/painting.jpeg'
-import kitch from '../src/assets/kitchen.jpg'
-import constrcuct from  '../src/assets/proj12.jpg';
+import kitch from '../src/assets/kitch.jpg'
+import constrcuct from  '../src/assets/Arvind.jpg';
 import glass from  '../src/assets/glass.jpeg'
 
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaRegBuilding } from "react-icons/fa";
 import { FaSitemap } from "react-icons/fa";
-
-import client1 from "../src/assets/client1.png";
-import client2 from "../src/assets/client2.png";
-import client3 from "../src/assets/client3.png";
-import { img } from "framer-motion/client";
 
 export const allservices = [
   {
@@ -76,26 +71,3 @@ export const planning = [
   },
 ];
 
-export const clients = [
-  {
-    image: client1,
-    name: "Alex Parker",
-    about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida cursus",
-    post: "Constructor",
-  },
-  {
-    image: client2,
-    name: "Drew James",
-    about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida cursus",
-    post: "Architect",
-  },
-  {
-    image: client3,
-    name: "Sam Peterson",
-    about:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida cursus",
-    post: "Builder",
-  },
-];

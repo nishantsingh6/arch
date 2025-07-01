@@ -2,66 +2,72 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { slideUpVariants, zoomInVariants } from './animation';
 
+// Your image imports...
 import upidr from '../assets/upidr.webp';
-import phdcci from '../assets/phdcci.jpg';
-import ornate from '../assets/ornate.avif';
-import Rajesh from '../assets/Rajesh.avif';
+import phdcci from '../assets/phdcc.jpg';
+import Rajesh from '../assets/Rajesh.jpg';
+import Dalmau from '../assets/Dalmau.jpg';
 import oyo from '../assets/oyo_tI.avif';
-import project3 from '../assets/proj3.jpg';
-import project4 from '../assets/proj4.jpg';
-import project7 from '../assets/proj7.jpg';
-import project8 from '../assets/proj8.jpg';
-import project9 from '../assets/proj9.jpg';
-import project11 from '../assets/proj11.jpg';
-import project12 from '../assets/proj12.jpg';
+import ornate from '../assets/ornate.avif';
+import citrus from '../assets/citrus.png';
+import lili from '../assets/proj9.jpg';
+import kukud from '../assets/kukud.avif';
+import jindal from '../assets/jindal.jpg';
+import judge from '../assets/judge.jpg';
+import Arvind from '../assets/Arvind.jpg';
+import Gaurav from '../assets/Gaurav.jpg';
+import Jitendra from '../assets/Jitendra.jpg';
 
 const governmentProjects = [
-  { image: upidr, title: 'UPIDR', description: 'Planning and design for Uttar Pradesh Industrial Development.' },
-  { image: phdcci, title: 'PHDCCI', description: 'Modern chamber renovation for smart workspace design.' },
-  { image: project3, title: 'District Hospital', description: 'Expansion of district medical facilities.' },
-];
-
-const hotelProjects = [
-  { image: project4, title: 'Luxury Resort', description: 'A modern luxury resort with eco-friendly designs.' },
-  { image: oyo, title: 'Green Hotel', description: 'Hotel constructed with sustainable materials.' },
-  { image: ornate, title: 'Boutique Hotel', description: 'Chic boutique hotel with premium comfort.' },
-];
-
-const residentialProjects = [
-  { image: project7, title: 'Modern Home', description: 'Stylish family home with smart layouts.' },
-  { image: project8, title: 'City Condos', description: 'Luxury condos with skyline views.' },
-  { image: project9, title: 'Green Living', description: 'Eco-homes focused on energy efficiency.' },
+  { image: upidr, title: 'UPIDR' },
+  { image: phdcci, title: 'PHDCCI' },
 ];
 
 const factoryProjects = [
-  { image: Rajesh, title: 'Auto Factory', description: 'Expansion for automotive production.' },
-  { image: project11, title: 'Food Plant', description: 'Automated hygienic food production unit.' },
-  { image: project12, title: 'Textile Factory', description: 'Sustainable textile manufacturing unit.' },
+  { image: Rajesh, title: 'Rajesh Factory' },
+  { image: Dalmau, title: 'Dalmau Food Plant' },
+];
+
+const hotelProjects = [
+  { image: citrus, title: 'CITRUS RESTAURANT & BANQUETS', address: 'Lucknow Uttar Pradesh' },
+  { image: oyo, title: 'OYO TOWN HOUSE SECTOR C INDIRA NAGAR LUCKNOW' },
+  { image: ornate, title: 'HOTEL ORNATE TELIBAGH LUCKNOW' },
+  { image: lili, title: 'HOTEL LILI VILLAS' },
+  { image: kukud, title: 'KUKUD RANGILA THE FAMILY RESTAURANT' },
+];
+
+const farmHouseProjects = [{ image: jindal, title: 'Jindal Farm House' }];
+
+const residentialProjects = [
+  { image: judge, title: 'HONORABLE JUDGE' },
+  { image: Arvind, title: 'MR. ARVIND SINGH' },
+  { image: Gaurav, title: 'MR. GAURAV ' },
+  { image: Jitendra, title: 'MR. JITENDRA ' },
 ];
 
 const Portfolio = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
   const handleImageClick = (image) => setSelectedImage(image);
   const closeModal = () => setSelectedImage(null);
 
   const renderProjectGrid = (projects) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-      {projects.map((project, index) => (
+      {projects.map((project, idx) => (
         <motion.div
-          key={index}
+          key={idx}
           variants={zoomInVariants}
-          className="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+          className="bg-white border rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer"
           onClick={() => handleImageClick(project.image)}
         >
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-[200px] object-cover rounded-t-lg"
-          />
+          <div className="w-full h-[220px] bg-white flex items-center justify-center overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="object-contain w-full h-full"
+            />
+          </div>
           <div className="p-4">
-            <h3 className="text-xl font-bold text-black mb-2">{project.title}</h3>
-            <p className="text-gray-700 text-sm">{project.description}</p>
+            <h3 className="text-xl font-bold text-black text-center">{project.title}</h3>
           </div>
         </motion.div>
       ))}
@@ -86,44 +92,45 @@ const Portfolio = () => {
 
       {/* Sections */}
       <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
-        <h2 className="text-black text-2xl font-semibold mb-4">Government Projects</h2>
+        <h2 className="text-2xl font-semibold mb-4">Government Projects</h2>
         {renderProjectGrid(governmentProjects)}
       </motion.div>
 
       <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
-        <h2 className="text-black text-2xl font-semibold mb-4">Hotel Projects</h2>
+        <h2 className="text-2xl font-semibold mb-4">Factory Projects</h2>
+        {renderProjectGrid(factoryProjects)}
+      </motion.div>
+
+      <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
+        <h2 className="text-2xl font-semibold mb-4">Hotel Projects</h2>
         {renderProjectGrid(hotelProjects)}
       </motion.div>
 
       <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
-        <h2 className="text-black text-2xl font-semibold mb-4">Residential Projects</h2>
-        {renderProjectGrid(residentialProjects)}
+        <h2 className="text-2xl font-semibold mb-4">Farm House Projects</h2>
+        {renderProjectGrid(farmHouseProjects)}
       </motion.div>
 
       <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
-        <h2 className="text-black text-2xl font-semibold mb-4">Factory Projects</h2>
-        {renderProjectGrid(factoryProjects)}
+        <h2 className="text-2xl font-semibold mb-4">Residential Projects</h2>
+        {renderProjectGrid(residentialProjects)}
       </motion.div>
 
       {/* Modal */}
       {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
-        >
-          <div className="relative max-w-[90%] max-h-[90%]">
-            {/* Close Button */}
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+          <div className="relative">
             <button
               onClick={closeModal}
-              className="absolute top-[-20px] right-[-20px] bg-white text-black rounded-full p-2 text-xl shadow-lg hover:bg-red-500 hover:text-white transition-all"
+              className="absolute -top-4 -right-4 bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-red-600 hover:text-white transition"
               aria-label="Close"
             >
               &times;
             </button>
-
             <img
               src={selectedImage}
               alt="Full View"
-              className="w-full h-full object-contain rounded-lg shadow-2xl"
+              className="max-w-[90vw] max-h-[80vh] object-contain rounded-lg shadow-2xl"
             />
           </div>
         </div>

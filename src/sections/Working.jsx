@@ -24,8 +24,8 @@ const workData = [
 const Working = () => {
   return (
     <section className="px-8 py-12 bg-gray-50">
-      <h2 className="text-yellow-700 font-semibold text-sm mb-2">WORKING PROCESS</h2>
-      <h1 className="text-4xl font-bold mb-8 text-gray-800">Our Innovative and Stylish Working Process</h1>
+      <h2 className="text-yellow-700 font-semibold text-sm mb-2 text-center">WORKING PROCESS</h2>
+      <h1 className="text-4xl font-bold mb-8 text-gray-800 text-center">Our Innovative and Stylish Working Process</h1>
       
       <div className="grid md:grid-cols-3 gap-6">
         {workData.map((item, i) => (

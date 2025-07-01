@@ -6,9 +6,9 @@ import {
   FaYoutube,
   FaInstagram,
   FaArrowUp,
-  FaWhatsapp
+  FaWhatsapp,
 } from "react-icons/fa";
-import { Link } from "react-scroll"; // Import Link from react-scroll for internal navigation
+import { Link as ScrollLink } from "react-scroll"; // alias to avoid confusion
 import logo from "../assets/r_logo.jpeg";
 
 const Footer = () => {
@@ -18,15 +18,21 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 px-4 pb-12 max-w-screen-xl mx-auto">
         <div className="bg-gray-600 text-center px-6 py-6 rounded-md w-full max-w-md flex flex-col items-center">
           <FaPhoneAlt size={28} className="mb-3" />
-          <a href="tel:+919250036565" className="text-xl font-bold break-words">
+          <a
+            href="tel:+919250036565"
+            className="text-sm font-medium break-words text-center sm:text-left max-w-full"
+          >
             +91-9250036565
           </a>
           <p className="text-sm mt-1">Have a question? Call us now</p>
         </div>
         <div className="bg-gray-600 text-center px-6 py-6 rounded-md w-full max-w-md flex flex-col items-center">
           <FaEnvelope size={28} className="mb-3" />
-          <a href="mailto:raadhikaservices@gmail.com" className="text-xl font-bold break-words text-center">
-            raadhikaservices@gmail.com
+          <a
+            href="mailto:radhikaarchitecturalservices@gmail.com"
+            className="text-sm font-medium break-words text-center sm:text-left max-w-full"
+          >
+            radhikaarchitecturalservices@gmail.com
           </a>
           <p className="text-sm mt-1">Need support? Drop us an email</p>
         </div>
@@ -34,22 +40,28 @@ const Footer = () => {
 
       {/* Footer Bottom Grid with thin dividers */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-6 md:px-20 py-10 border-t border-gray-800 text-sm max-w-screen-xl mx-auto">
-        {/* Column 1: Quick Links */}
+        {/* Column 1: Quick Links with react-scroll */}
         <div className="md:border-r border-gray-700 pr-0 md:pr-4">
           <h2 className="text-xl font-bold mb-4">Quick Links</h2>
           <ul className="space-y-2">
-            {["Home", "About Us", "Our Services", "Gallery", "Testimonials", "Contact Us"].map((link) => (
-              <li key={link}>
-                <Link
-                  to={link.toLowerCase().replace(/\s+/g, '')} // Smooth scroll to sections
+            {[
+              { label: "Home", to: "hero" },
+              { label: "About Us", to: "about" },
+              { label: "Our Services", to: "services" },
+              { label: "Projects", to: "projects" },
+              { label: "Contact Us", to: "contact" },
+            ].map(({ label, to }) => (
+              <li key={label}>
+                <ScrollLink
+                  to={to}
                   spy={true}
                   smooth={true}
                   offset={-80}
                   duration={500}
                   className="hover:text-yellow-500 transition duration-300 cursor-pointer"
                 >
-                  {link}
-                </Link>
+                  {label}
+                </ScrollLink>
               </li>
             ))}
           </ul>
@@ -68,9 +80,17 @@ const Footer = () => {
             and hotels worldwide. We bring innovation, functionality, and style
             to every project.
           </p>
-          <p className="mt-3 text-sm font-semibold underline cursor-pointer hover:text-yellow-500 transition duration-300">
+          {/* Read More is still a link to about section scroll */}
+          <ScrollLink
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className="mt-3 text-sm font-semibold underline cursor-pointer hover:text-yellow-500 transition duration-300 inline-block"
+          >
             READ MORE →
-          </p>
+          </ScrollLink>
         </div>
 
         {/* Column 3: Map and Social Links */}
@@ -90,10 +110,21 @@ const Footer = () => {
           </div>
           <h2 className="text-lg font-semibold mb-2">Follow Us On</h2>
           <div className="flex gap-3 justify-center md:justify-start">
-            {[{ Icon: FaFacebookF, url: "https://www.facebook.com/raadhika.architectural" }, 
-              { Icon: FaYoutube, url: "https://www.youtube.com/@RadhikaArchitecturalServices" },
-              { Icon: FaInstagram, url: "https://www.instagram.com/raadhikaarchitectural" },
-              { Icon: FaWhatsapp, url: "https://wa.me/919250036565" }].map(({ Icon, url }, idx) => (
+            {[
+              {
+                Icon: FaFacebookF,
+                url: "https://www.facebook.com/raadhika.architectural",
+              },
+              {
+                Icon: FaYoutube,
+                url: "https://www.youtube.com/@RadhikaArchitecturalServices",
+              },
+              {
+                Icon: FaInstagram,
+                url: "https://www.instagram.com/raadhikaarchitectural",
+              },
+              { Icon: FaWhatsapp, url: "https://wa.me/919250036565" },
+            ].map(({ Icon, url }, idx) => (
               <a
                 key={idx}
                 href={url}

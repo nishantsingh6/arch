@@ -4,26 +4,26 @@ import { Autoplay } from 'swiper/modules';
 import { Link } from 'react-scroll';
 import 'swiper/css';
 
-import slide1 from '../assets/intertior.webp';
-import slide2 from '../assets/ornate.avif';
+import slide1 from '../assets/bg1.jpg';
+import slide2 from '../assets/bg2.jpg';
 
 const slides = [
   {
     image: slide1,
     subheading: 'WELCOME TO RAADHIKA ARCHITECTURAL SERVICES',
-    heading: 'Making Your Home More Beautiful',
+    heading: 'Design with purpose build with precision',
     buttons: [
       { label: 'VIEW MORE ➝', to: 'about', style: 'border border-white text-white' },
-      { label: 'OUR GALLERY ➝', to: 'gallery', style: 'bg-[#c59d5f] text-white' }
+      { label: 'OUR PROJECT ➝', to: 'projects', style: 'bg-[#c59d5f] text-white' }
     ]
   },
   {
     image: slide2,
-    subheading: '',
-    heading: 'Best Ideas For Your Home Interiors',
+    subheading: 'OUR PURPOSE',
+    heading: 'LONG TERMS GOOD BUSINESS RELATIONSHIP',
     buttons: [
       { label: 'READ MORE ➝', to: 'about', style: 'bg-[#c59d5f] text-white' },
-      { label: 'OUR GALLERY ➝', to: 'gallery', style: 'border border-white text-white' }
+      { label: 'OUR GALLERY ➝', to: 'projects', style: 'border border-white text-white' }
     ]
   }
 ];
@@ -47,7 +47,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-black/50"></div>
 
               {/* Content */}
-              <div className="relative z-10 text-yellow-500 max-w-4xl mx-auto text-center px-4">
+              <div className="relative z-10 text-yellow-500 max-w-4xl mx-auto text-center px-4 uppercase">
                 <div className="relative inline-block text-left">
                   <div className="absolute top-[-20px] left-[-20px] w-[120%] h-[120%] border-2 border-[#c59d5f] z-[-1]" />
 
