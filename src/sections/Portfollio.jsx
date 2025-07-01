@@ -79,7 +79,7 @@ const Portfolio = () => {
       >
         <h2 className="text-yellow-600 text-2xl font-semibold">PORTFOLIO</h2>
         <h1 className="text-black uppercase text-[32px] md:text-[40px] font-bold text-center">
-          Our Best Projects
+          Our Past Experiences
         </h1>
         <div className="w-[120px] h-[6px] bg-yellow-700" />
       </motion.div>

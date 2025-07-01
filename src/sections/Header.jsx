@@ -10,17 +10,17 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const services = [
-    'Office Furniture',
-    'Sofa Furniture',
-    'Home Workstations',
-    'Office Workstations',
-    'Wardrobes',
-    'Bed Design',
-  ];
+  // const services = [
+  //   'Office Furniture',
+  //   'Sofa Furniture',
+  //   'Home Workstations',
+  //   'Office Workstations',
+  //   'Wardrobes',
+  //   'Bed Design',
+  // ];
 
   return (
-    <header className="flex items-center justify-around px-6 py-4 bg-white shadow-md sticky top-0 z-50">
+    <header className="flex items-center justify-between lg:justify-around px-6 py-4 bg-white shadow-md sticky top-0 z-50">
       {/* Logo */}
       <div className="flex-shrink-0">
         <Link
@@ -62,26 +62,16 @@ const Header = () => {
           </Link>
 
           {/* Services Dropdown */}
-          <div className="relative group">
-            <button className="flex items-center text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:text-yellow-600 text-[15px] focus:outline-none">
-              Our Services <ChevronDown className="ml-1 w-4 h-4" />
-            </button>
-            <div className="absolute top-full left-0 w-60 max-h-60 overflow-y-auto bg-white shadow-md hidden group-hover:block z-10">
-              {services.map(service => (
-                <Link
-                  key={service}
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  className="block px-4 py-2 text-sm hover:bg-gray-100"
-                >
-                  {service}
-                </Link>
-              ))}
-            </div>
-          </div>
+           <Link
+            to="services"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+            className="text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:text-yellow-600 text-[15px]"
+          >
+            Services
+          </Link>
 
           <Link
             to="projects"
@@ -125,25 +115,9 @@ const Header = () => {
           </Link>
 
           {/* Mobile Services Dropdown */}
-          <details className="w-full">
-            <summary className="cursor-pointer font-semibold hover:text-yellow-600">Our Services</summary>
-            <div className="pl-4 mt-2 space-y-2">
-              {services.map(service => (
-                <Link
-                  key={service}
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  onClick={closeMenu}
-                  className="block text-sm hover:text-yellow-600"
-                >
-                  {service}
-                </Link>
-              ))}
-            </div>
-          </details>
+          <Link to="services" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenu} className="hover:text-yellow-600">
+           Services
+          </Link>
 
           <Link to="projects" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenu} className="hover:text-yellow-600">
             Projects

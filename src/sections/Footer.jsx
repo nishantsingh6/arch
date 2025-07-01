@@ -3,11 +3,11 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
+  FaYoutube,
   FaInstagram,
   FaArrowUp,
 } from "react-icons/fa";
+import { Link } from "react-scroll"; // Import Link from react-scroll for internal navigation
 import logo from "../assets/r_logo.jpeg";
 
 const Footer = () => {
@@ -17,36 +17,44 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 px-4 pb-12 max-w-screen-xl mx-auto">
         <div className="bg-gray-600 text-center px-6 py-6 rounded-md w-full max-w-md flex flex-col items-center">
           <FaPhoneAlt size={28} className="mb-3" />
-          <p className="text-xl font-bold break-words">+91-9250036565</p>
+          <a href="tel:+919250036565" className="text-xl font-bold break-words">
+            +91-9250036565
+          </a>
           <p className="text-sm mt-1">Have a question? Call us now</p>
         </div>
         <div className="bg-gray-600 text-center px-6 py-6 rounded-md w-full max-w-md flex flex-col items-center">
           <FaEnvelope size={28} className="mb-3" />
-          <p className="text-xl font-bold break-words text-center">
+          <a href="mailto:raadhikaservices@gmail.com" className="text-xl font-bold break-words text-center">
             raadhikaservices@gmail.com
-          </p>
+          </a>
           <p className="text-sm mt-1">Need support? Drop us an email</p>
         </div>
       </div>
 
       {/* Footer Bottom Grid with thin dividers */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-6 md:px-20 py-10 border-t border-gray-800 text-sm max-w-screen-xl mx-auto">
-        {/* Column 1 */}
+        {/* Column 1: Quick Links */}
         <div className="md:border-r border-gray-700 pr-0 md:pr-4">
           <h2 className="text-xl font-bold mb-4">Quick Links</h2>
           <ul className="space-y-2">
             {["Home", "About Us", "Our Services", "Gallery", "Testimonials", "Contact Us"].map((link) => (
-              <li
-                key={link}
-                className="hover:text-yellow-500 transition duration-300 cursor-pointer"
-              >
-                {link}
+              <li key={link}>
+                <Link
+                  to={link.toLowerCase().replace(/\s+/g, '')} // Smooth scroll to sections
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="hover:text-yellow-500 transition duration-300 cursor-pointer"
+                >
+                  {link}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Column 2 */}
+        {/* Column 2: Logo and Description */}
         <div className="text-center md:border-r border-gray-700 px-0 md:px-4">
           <img
             src={logo}
@@ -64,7 +72,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Column 3 */}
+        {/* Column 3: Map and Social Links */}
         <div className="pl-0 md:pl-4">
           <h2 className="text-xl font-bold mb-4">Our Location</h2>
           <div className="mb-4 w-full h-32 md:h-36 rounded overflow-hidden">
@@ -81,18 +89,18 @@ const Footer = () => {
           </div>
           <h2 className="text-lg font-semibold mb-2">Follow Us On</h2>
           <div className="flex gap-3 justify-center md:justify-start">
-            {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map(
-              (Icon, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="hover:scale-110 transition-transform duration-300"
-                  aria-label="social media link"
-                >
-                  <Icon className="bg-white text-black p-2 rounded w-9 h-9 hover:text-yellow-500" />
-                </a>
-              )
-            )}
+            {[{ Icon: FaFacebookF, url: "https://www.facebook.com/raadhika.architectural" }, { Icon: FaYoutube, url: "https://www.youtube.com/@RadhikaArchitecturalServices" },{ Icon: FaInstagram, url: "https://www.instagram.com/raadhikaarchitectural" }].map(({ Icon, url }, idx) => (
+              <a
+                key={idx}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform duration-300"
+                aria-label="social media link"
+              >
+                <Icon className="bg-white text-black p-2 rounded w-9 h-9 hover:text-yellow-500" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

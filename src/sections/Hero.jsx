@@ -47,7 +47,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-black/50"></div>
 
               {/* Content */}
-              <div className="relative z-10 text-white max-w-4xl mx-auto text-center px-4">
+              <div className="relative z-10 text-yellow-500 max-w-4xl mx-auto text-center px-4">
                 <div className="relative inline-block text-left">
                   <div className="absolute top-[-20px] left-[-20px] w-[120%] h-[120%] border-2 border-[#c59d5f] z-[-1]" />
 
