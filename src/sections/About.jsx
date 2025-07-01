@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { slideUpVariants, zoomInVariants } from './animation';
+import aboutImage from '../assets/kitchen.jpg'; // replace with correct path
 
 const About = () => {
   const [showFullText, setShowFullText] = useState(false);
-
   const handleToggle = () => setShowFullText(prev => !prev);
 
   const fullText = `Raadhika Architectural Services specializes in creating stylish, functional, and innovative interior designs for residential and commercial spaces. We are committed to delivering quality, safety, and exceptional craftsmanship in every project, ensuring client satisfaction worldwide. With years of experience in the design industry, we understand the importance of both aesthetics and functionality. Our team works closely with each client to bring their vision to life, creating environments that are both beautiful and practical.
@@ -13,50 +13,30 @@ At Raadhika Architectural Services, we believe that every space has the potentia
   const previewText = fullText.slice(0, 450) + '...';
 
   return (
-    <div
-      id="about"
-      className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col lg:flex-row justify-between items-start gap-[50px]"
-    >
-      {/* Left Content */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={slideUpVariants}
-        className="lg:w-[60%] w-full flex flex-col items-start justify-center gap-6"
-      >
-        <h2 className="text-green-500 text-2xl font-semibold">About Us</h2>
-
-        <h1 className="text-white uppercase text-[32px] md:text-[40px] font-bold leading-tight">
-          Raadhika Architectural Services
-        </h1>
-
-        <div className="w-[120px] h-[6px] bg-green-500"></div>
-
-        <p className="text-2xl italic text-gray-50 mt-6">
-          Raadhika Architectural Services blends creativity and functionality to design spaces that inspire and perform. Whether residential or commercial, our interiors are a reflection of purpose, elegance, and innovation.
-        </p>
-      </motion.div>
-
-      {/* Right Content */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={slideUpVariants}
-        className="lg:w-[40%] w-full flex flex-col items-start justify-center gap-6"
-      >
-        <p className="text-white text-base md:text-lg text-justify leading-relaxed">
-          {showFullText ? fullText : previewText}
-        </p>
-
-        <motion.button
-          variants={zoomInVariants}
-          onClick={handleToggle}
-          className="bg-green-500 hover:bg-white hover:text-black px-8 py-3 rounded-lg text-black font-bold transition-all duration-300"
-        >
-          {showFullText ? 'SHOW LESS' : 'SHOW MORE'}
-        </motion.button>
-      </motion.div>
-    </div>
+    <section id="about" className="w-full">
+      {/* Top Section (Image + Intro Text) */}
+      <div className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 py-12 bg-white">
+        <img
+          src={aboutImage}
+          alt="Interior"
+          className="w-full lg:w-1/2 rounded shadow-md"
+        />
+        <div className="lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
+          <h2 className="text-yellow-700 font-semibold text-sm mb-2 uppercase">
+            About Raadhika Architectural Services
+          </h2>
+          <h1 className="text-4xl font-bold leading-tight mb-4 text-gray-900">
+            Transforming Spaces with Style and Elegance
+          </h1>
+          <p className="mb-4 text-gray-600">
+           {showFullText ? fullText : previewText}
+          </p>
+          <button className="bg-yellow-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-yellow-700 transition duration-300" onClick={handleToggle}>
+             {showFullText ? 'SHOW LESS' : 'SHOW MORE'}
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 

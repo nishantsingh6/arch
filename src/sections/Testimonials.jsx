@@ -13,13 +13,13 @@ const Testimonials = () => {
         className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center gap-6"
       >
         {/* Section Header */}
-        <h2 className="text-green-500 text-2xl font-semibold">TESTIMONIALS</h2>
+        <h2 className="text-yellow-700 text-2xl font-semibold">TESTIMONIALS</h2>
 
         <h1 className="text-white uppercase text-[32px] md:text-[40px] font-bold text-center">
           What Our Clients Say
         </h1>
 
-        <div className="w-[120px] h-[6px] bg-green-500" />
+        <div className="w-[120px] h-[6px] bg-yellow-700" />
 
         {/* Testimonials Grid */}
         <motion.div
@@ -32,7 +32,7 @@ const Testimonials = () => {
             <motion.div
               key={index}
               variants={zoomInVariants}
-              className="relative bg-white/5 border border-white rounded-lg p-6 flex flex-col items-center text-center transition-all hover:bg-green-500 hover:text-black"
+              className="relative bg-white/5 border border-white rounded-lg p-6 flex flex-col items-center text-center transition-all hover:bg-yellow-700 hover:text-black"
             >
               {/* Client Message */}
               <p className="text-white hover:text-black transition-colors duration-300 text-lg mb-16">
@@ -44,12 +44,12 @@ const Testimonials = () => {
                 <img
                   src={item.image}
                   alt={`${item.name} profile`}
-                  className="w-20 h-20 rounded-full border-4 border-green-500 object-cover"
+                  className="w-20 h-20 rounded-full border-4 border-yellow-700 object-cover"
                 />
                 <h3 className="mt-3 text-xl font-bold uppercase text-white hover:text-black">
                   {item.name}
                 </h3>
-                <p className="text-green-500 text-sm font-medium">{item.post}</p>
+                <p className="text-yellow-700 text-sm font-medium">{item.post}</p>
               </div>
             </motion.div>
           ))}

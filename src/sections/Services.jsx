@@ -5,46 +5,24 @@ import { allservices } from '../export';
 
 const Services = () => {
   return (
-    <div id="services" className="w-full bg-white">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={slideUpVariants}
-        className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6"
-      >
-        <h1 className="text-black uppercase text-[32px] md:text-[40px] font-bold text-center">
-          Services We Offer
-        </h1>
-
-        <div className="w-[120px] h-[6px] bg-green-500"></div>
-
-        {/* Services Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={zoomInVariants}
-          className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
-        >
-          {allservices.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={zoomInVariants}
-              className="flex flex-col items-center gap-6 p-6 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white"
-            >
-              <img
-                src={item.img} 
-                alt={`${item.title} image`} 
-                className="w-[200px] h-[200px] object-cover rounded-lg mb-4 hover:scale-105 transition-all duration-300"
-              />
-              <div className="flex flex-col gap-2 text-center">
-                <h3 className="text-xl font-bold text-black">{item.title}</h3>
-                <p className="text-[16px] text-gray-700">{item.about}</p>
-              </div>
-            </motion.div>
+     <section className="px-8 py-12 bg-gray-50">
+        <h2 className="text-yellow-700 font-semibold text-sm text-center mb-2">SERVICES WE DO</h2>
+        <h1 className="text-4xl font-bold text-center mb-6">Expert Interior Solutions</h1>
+        <div className="grid md:grid-cols-4 gap-4">
+          {[
+            { icon: "🧭", title: "Residential Interiors" },
+            { icon: "🏢", title: "Commercial Interiors" },
+            { icon: "🛠️", title: "Renovation Services" },
+            { icon: "🧰", title: "Custom Designs" }
+          ].map(({ icon, title }) => (
+            <div key={title} className="p-6 bg-white rounded shadow text-center">
+              <div className="text-4xl mb-2">{icon}</div>
+              <h3 className="font-semibold text-lg mb-2">{title}</h3>
+              <p className="text-sm text-gray-600">Short description about {title.toLowerCase()}.</p>
+            </div>
           ))}
-        </motion.div>
-      </motion.div>
-    </div>
+        </div>
+      </section>
   );
 };
 

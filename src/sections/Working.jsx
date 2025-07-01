@@ -1,55 +1,48 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { slideUpVariants, zoomInVariants } from './animation';
-import { planning } from '../export';
+import img1 from '../assets/wall1.jpg';
+import img2 from '../assets/wall2.webp';
+import img3 from '../assets/wall3.jpg';
+
+const workData = [
+  {
+    title: 'Wall Decoration',
+    image: img1,
+    description: 'We add visual interest to your walls with textures, panels, and creative finishes that elevate every room.'
+  },
+  {
+    title: 'Interior Decoration',
+    image: img2,
+    description: 'From furniture selection to lighting and accessories, we style interiors that blend elegance and comfort.'
+  },
+  {
+    title: 'Interior Architecture',
+    image: img3,
+    description: 'We combine architectural insight with functional design to create spaces that truly inspire and perform.'
+  }
+];
 
 const Working = () => {
   return (
-    <div id="services" className="w-full bg-white">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={slideUpVariants}
-        className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6"
-      >
-        {/* Section Header */}
-        <h2 className="text-green-500 text-2xl font-semibold">STEP BY STEP</h2>
-
-        <h1 className="text-black uppercase text-[32px] md:text-[40px] font-bold text-center">
-          How It's Working
-        </h1>
-
-        <div className="w-[120px] h-[6px] bg-green-500" />
-
-        {/* Step Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={zoomInVariants}
-          className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10"
-        >
-          {planning.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={zoomInVariants}
-              className="flex flex-col items-center text-center gap-4 border-2 border-green-500 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <div>
-                <item.icon className="w-20 h-20 bg-green-500 hover:bg-black hover:fill-white p-4 rounded-full transition-all duration-300 cursor-pointer" />
-              </div>
-
-              <h3 className="text-xl font-bold uppercase text-black">
-                {item.title}
-              </h3>
-
-              <p className="text-gray-600 text-base">
-                {item.about}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-    </div>
+    <section className="px-8 py-12 bg-gray-50">
+      <h2 className="text-yellow-700 font-semibold text-sm mb-2">WORKING PROCESS</h2>
+      <h1 className="text-4xl font-bold mb-8 text-gray-800">Our Innovative and Stylish Working Process</h1>
+      
+      <div className="grid md:grid-cols-3 gap-6">
+        {workData.map((item, i) => (
+          <div key={i} className="bg-white rounded shadow hover:shadow-lg transition-shadow duration-300">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-60 object-cover rounded-t"
+            />
+            <div className="p-4">
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">{item.title}</h3>
+              <p className="text-sm text-gray-600">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

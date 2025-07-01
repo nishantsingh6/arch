@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaXmark, FaBars } from 'react-icons/fa6';
+import { FaBars, FaXmark } from 'react-icons/fa6';
+import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-scroll';
 import logo from '../assets/r_logo.jpeg';
 
@@ -9,103 +10,150 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const navItems = [
-    { link: 'Home', path: 'hero' },
-    { link: 'About', path: 'about' },
-    { link: 'Services', path: 'services' },
-    { link: 'Projects', path: 'projects' },
-    { link: 'Contact', path: 'contact' },
+  const services = [
+    'Office Furniture',
+    'Sofa Furniture',
+    'Home Workstations',
+    'Office Workstations',
+    'Wardrobes',
+    'Bed Design',
   ];
 
   return (
-    <nav className="w-full bg-gray-100 flex justify-between items-center lg:px-16 px-6 py-4 sticky top-0 z-50 shadow-md">
-      
+    <header className="flex items-center justify-around px-6 py-4 bg-white shadow-md sticky top-0 z-50">
       {/* Logo */}
-      <Link
-        to="hero"
-        spy={true}
-        smooth={true}
-        offset={-100}
-        duration={500}
-        className="cursor-pointer"
-        onClick={closeMenu}
-      >
-        <img src={logo} alt="Logo" className="h-12 md:h-16" />
-      </Link>
-
-      {/* Desktop Navigation */}
-      <ul className="lg:flex justify-center items-center gap-6 hidden">
-        {navItems.map(({ link, path }) => (
-          <Link
-            key={path}
-            to={path}
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
-            className="text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:bg-green-500 hover:text-black text-[15px]"
-          >
-            {link}
-          </Link>
-        ))}
-      </ul>
-
-      {/* Desktop Reach Us Button */}
-      <div className="hidden lg:flex">
+      <div className="flex-shrink-0">
         <Link
-          to="contact"
+          to="home"
           spy={true}
           smooth={true}
           offset={-100}
           duration={500}
+          className="cursor-pointer"
+          onClick={closeMenu}
         >
-          <button className="bg-green-500 hover:bg-black hover:text-white text-black font-semibold px-8 py-2 rounded-full transform hover:scale-105 transition duration-300">
-            Reach Us
-          </button>
+          <img src={logo} alt="Logo" className="h-12 md:h-16" />
         </Link>
       </div>
 
-      {/* Mobile Menu Toggle */}
-      <div className="lg:hidden flex items-center">
-        <button onClick={toggleMenu} className="text-2xl text-black">
-          {isMenuOpen ? <FaXmark /> : <FaBars />}
-        </button>
-      </div>
+      {/* Desktop Navigation */}
+      <div className="flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6 font-semibold text-sm">
+          <Link
+            to="hero"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+            className="text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:text-yellow-600 text-[15px]"
+          >
+            Home
+          </Link>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-6 z-40 lg:hidden">
-          {navItems.map(({ link, path }) => (
-            <Link
-              key={path}
-              to={path}
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
-              onClick={closeMenu}
-              className="text-black uppercase font-semibold cursor-pointer p-2 hover:text-green-500"
-            >
-              {link}
-            </Link>
-          ))}
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+            className="text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:text-yellow-600 text-[15px]"
+          >
+            About Us
+          </Link>
 
-          {/* Mobile Reach Us Button */}
+          {/* Services Dropdown */}
+          <div className="relative group">
+            <button className="flex items-center text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:text-yellow-600 text-[15px] focus:outline-none">
+              Our Services <ChevronDown className="ml-1 w-4 h-4" />
+            </button>
+            <div className="absolute top-full left-0 w-60 max-h-60 overflow-y-auto bg-white shadow-md hidden group-hover:block z-10">
+              {services.map(service => (
+                <Link
+                  key={service}
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="block px-4 py-2 text-sm hover:bg-gray-100"
+                >
+                  {service}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <Link
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+            className="text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:text-yellow-600 text-[15px]"
+          >
+            Projects
+          </Link>
+
           <Link
             to="contact"
             spy={true}
             smooth={true}
-            offset={-80}
+            offset={-100}
             duration={500}
-            onClick={closeMenu}
+            className="text-black uppercase font-bold cursor-pointer p-3 rounded-full hover:text-yellow-600 text-[15px]"
           >
-            <button className="bg-green-500 hover:bg-black hover:text-white text-black font-semibold px-6 py-2 rounded-full">
-              Reach Us
-            </button>
+            Contact Us
+          </Link>
+        </nav>
+
+        {/* Mobile Menu Icon */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-2xl text-black">
+            {isMenuOpen ? <FaXmark /> : <FaBars />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="absolute top-20 left-0 w-full bg-white shadow-md py-6 flex flex-col items-start px-6 space-y-4 z-40 md:hidden">
+          <Link to="home" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenu} className="hover:text-yellow-600">
+            Home
+          </Link>
+          <Link to="about" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenu} className="hover:text-yellow-600">
+            About Us
+          </Link>
+
+          {/* Mobile Services Dropdown */}
+          <details className="w-full">
+            <summary className="cursor-pointer font-semibold hover:text-yellow-600">Our Services</summary>
+            <div className="pl-4 mt-2 space-y-2">
+              {services.map(service => (
+                <Link
+                  key={service}
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  onClick={closeMenu}
+                  className="block text-sm hover:text-yellow-600"
+                >
+                  {service}
+                </Link>
+              ))}
+            </div>
+          </details>
+
+          <Link to="projects" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenu} className="hover:text-yellow-600">
+            Projects
+          </Link>
+          <Link to="contact" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenu} className="hover:text-yellow-600">
+            Contact Us
           </Link>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 

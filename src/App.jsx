@@ -7,6 +7,7 @@ import Portfollio from "./sections/Portfollio";
 import Working from "./sections/Working";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import Quality from "./sections/Quality";
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
   <Hero/>
   <About/>
   <Services/>
+  <Quality/>
   <Portfollio/>
   <Working/>
   <Contact/>

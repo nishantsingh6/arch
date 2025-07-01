@@ -77,11 +77,11 @@ const Portfolio = () => {
         variants={slideUpVariants}
         className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6"
       >
-        <h2 className="text-green-600 text-2xl font-semibold">PORTFOLIO</h2>
+        <h2 className="text-yellow-600 text-2xl font-semibold">PORTFOLIO</h2>
         <h1 className="text-black uppercase text-[32px] md:text-[40px] font-bold text-center">
           Our Best Projects
         </h1>
-        <div className="w-[120px] h-[6px] bg-green-500" />
+        <div className="w-[120px] h-[6px] bg-yellow-700" />
       </motion.div>
 
       {/* Sections */}
