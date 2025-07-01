@@ -6,6 +6,7 @@ import {
   FaYoutube,
   FaInstagram,
   FaArrowUp,
+  FaWhatsapp
 } from "react-icons/fa";
 import { Link } from "react-scroll"; // Import Link from react-scroll for internal navigation
 import logo from "../assets/r_logo.jpeg";
@@ -89,7 +90,10 @@ const Footer = () => {
           </div>
           <h2 className="text-lg font-semibold mb-2">Follow Us On</h2>
           <div className="flex gap-3 justify-center md:justify-start">
-            {[{ Icon: FaFacebookF, url: "https://www.facebook.com/raadhika.architectural" }, { Icon: FaYoutube, url: "https://www.youtube.com/@RadhikaArchitecturalServices" },{ Icon: FaInstagram, url: "https://www.instagram.com/raadhikaarchitectural" }].map(({ Icon, url }, idx) => (
+            {[{ Icon: FaFacebookF, url: "https://www.facebook.com/raadhika.architectural" }, 
+              { Icon: FaYoutube, url: "https://www.youtube.com/@RadhikaArchitecturalServices" },
+              { Icon: FaInstagram, url: "https://www.instagram.com/raadhikaarchitectural" },
+              { Icon: FaWhatsapp, url: "https://wa.me/919250036565" }].map(({ Icon, url }, idx) => (
               <a
                 key={idx}
                 href={url}
