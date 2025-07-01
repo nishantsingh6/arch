@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import aboutImage from '../assets/IAS.jpg'; // make sure the path is correct
+import aboutImage from '../assets/Ias.jpg'; // make sure the path is correct
 
 const About = () => {
   const [showFullText, setShowFullText] = useState(false);
