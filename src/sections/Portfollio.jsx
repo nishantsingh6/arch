@@ -87,9 +87,8 @@ const Portfolio = () => {
     <div className="w-full bg-white text-black" id="projects">
       {/* Header */}
       <div className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6">
-        <h2 className="text-yellow-600 text-2xl font-semibold">Our Portfolio</h2>
-        <h1 className="text-black uppercase text-[32px] md:text-[40px] font-normal text-center">
-          Our Past Experiences
+        <h1 className="text-yellow-600  text-[32px] md:text-[40px] font-normal text-center">
+          Our Portfolio
         </h1>
         <div className="w-[120px] h-[6px] bg-yellow-700" />
       </div>

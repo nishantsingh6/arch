@@ -7,8 +7,7 @@ const Quality = () => {
     <section className="px-6 md:px-12 py-12 bg-gray-50" id="services">
       {/* Header with Logo + Text from Image */}
       <div className="text-center mb-10 flex flex-col items-center">
-        <h2 className="text-yellow-700 font-semibold text-sm mb-2">OUR SERVICES QUALITY</h2>
-        <h1 className="text-4xl font-bold mb-6">Explore Our Services</h1>
+        <h1 className="text-yellow-700 text-4xl font-bold mb-6">Explore Our Services</h1>
       </div>
 
       {/* Service Cards */}
