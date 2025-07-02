@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaXmark } from 'react-icons/fa6';
 import { Link } from 'react-scroll';
-import logo from '../assets/r_logo.jpeg';
+import logo from '../assets/logo.png';
 
 const navLinks = [
   { name: 'Home', to: 'hero' },
@@ -29,7 +29,7 @@ const Header = () => {
           onClick={closeMenu}
           className="cursor-pointer"
         >
-          <img src={logo} alt="Raadhika Logo" className="h-12 md:h-16" />
+          <img src={logo} alt="RADHIKA Logo" className="h-16 md:h-20" />
         </Link>
 
         {/* Desktop Navigation */}

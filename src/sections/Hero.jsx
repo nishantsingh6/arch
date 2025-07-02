@@ -10,7 +10,7 @@ import slide2 from '../assets/bg2.jpg';
 const slides = [
   {
     image: slide1,
-    subheading: 'WELCOME TO RAADHIKA ARCHITECTURAL SERVICES',
+    subheading: 'WELCOME TO RADHIKA ARCHITECTURAL SERVICES',
     heading: 'Design with purpose build with precision',
     buttons: [
       { label: 'VIEW MORE ➝', to: 'about', style: 'border border-white text-white' },

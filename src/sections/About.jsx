@@ -25,7 +25,7 @@ const About = () => {
         {/* Text Content */}
         <div className="w-full lg:w-1/2">
           <h2 className="text-yellow-700 font-semibold text-sm mb-2 uppercase tracking-wide">
-            About Raadhika Architectural Services
+            About RADHIKA Architectural Services
           </h2>
           <h1 className="text-3xl sm:text-4xl font-bold leading-snug mb-6 text-gray-900">
             Transforming Spaces with Style and Elegance

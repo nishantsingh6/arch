@@ -71,11 +71,11 @@ const Footer = () => {
         <div className="text-center md:border-r border-gray-700 px-0 md:px-4">
           <img
             src={logo}
-            alt="Raadhika Logo"
+            alt="RADHIKA Logo"
             className="mx-auto mb-4 h-20 object-contain max-w-full"
           />
           <p className="text-sm text-gray-300 px-2 md:px-0">
-            Raadhika Architectural Services is a premier design consultancy
+            RADHIKA Architectural Services is a premier design consultancy
             specializing in crafting exceptional interiors for homes, offices,
             and hotels worldwide. We bring innovation, functionality, and style
             to every project.
@@ -113,27 +113,34 @@ const Footer = () => {
             {[
               {
                 Icon: FaFacebookF,
-                url: "https://www.facebook.com/raadhika.architectural",
+                url: "https://www.facebook.com/RADHIKA.architectural",
+                style: "text-blue-600 hover:text-blue-800 text-xl", // Custom style for Facebook
               },
               {
                 Icon: FaYoutube,
                 url: "https://www.youtube.com/@RadhikaArchitecturalServices",
+                style: "text-red-600 hover:text-red-800 text-xl", // Custom style for YouTube
               },
               {
                 Icon: FaInstagram,
-                url: "https://www.instagram.com/raadhikaarchitectural",
+                url: "https://www.instagram.com/RADHIKAarchitectural",
+                style: "text-purple-600 hover:text-purple-800 text-xl", // Custom style for Instagram
               },
-              { Icon: FaWhatsapp, url: "https://wa.me/919250036565" },
-            ].map(({ Icon, url }, idx) => (
+              {
+                Icon: FaWhatsapp,
+                url: "https://wa.me/919250036565",
+                style: "text-green-500 hover:text-green-700 text-xl", // Custom style for WhatsApp
+              },
+            ].map(({ Icon, url, style }, idx) => (
               <a
                 key={idx}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:scale-110 transition-transform duration-300"
+                className={`hover:scale-110 transition-transform duration-300 ${style}`}
                 aria-label="social media link"
               >
-                <Icon className="bg-white text-black p-2 rounded w-9 h-9 hover:text-yellow-500" />
+                <Icon className="p-2 rounded w-9 h-9 bg-white" />
               </a>
             ))}
           </div>
@@ -142,7 +149,7 @@ const Footer = () => {
 
       {/* Bottom Text */}
       <div className="text-center text-xs text-gray-400 py-4 border-t border-gray-800 max-w-screen-xl mx-auto px-4">
-        © 2025 Raadhika Architectural Services. All rights reserved.
+        © 2025 RADHIKA Architectural Services. All rights reserved.
       </div>
 
       {/* Scroll to Top Button */}

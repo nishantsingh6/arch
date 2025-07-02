@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // Your image imports...
 import upidr from '../assets/upidr.jpg';
 import phdcci from '../assets/phdcc.jpg';
-import hos from '../assets/pandeypur.jpg';
+import hos from '../assets/hosp.jpg';
 
 import Rajesh from '../assets/Rajesh.jpg';
 import Dalmau from '../assets/Dalmau.jpg';
@@ -35,13 +35,13 @@ const governmentProjects = [
 const commercialProjects = [
   { image: Rajesh, title: 'Rajesh Masala & Raghav Bhog' },
   { image: Dalmau, title: 'Dalmau Food Plant' },
-  { image: doctor, title: 'Dr. Hriday Heart Hospital' },
+  { image: doctor, title: 'Dr. Hriday Ji Heart Hospital' },
   { image: bank, title: 'Bank DBS Gomti Nagar, Lavanya Height' },
   { image: citrus, title: 'Citrus Restaurant & Banquets Ashiyana, Lucknow' },
   { image: oyo, title: 'Hotel Town House, Indira Nagar, Lucknow' },
   { image: ornate, title: 'Hotel Ornate, Telibagh, Lucknow' },
   { image: assh, title: 'Oyo Town House, Ashiyana, Lucknow' },
-  { image: lili, title: 'Hotel Lili Villas' },
+  { image: lili, title: 'Hotel Lili Villas, Lucknow' },
   { image: kukud, title: 'Kukkad Rangila The Family Restaurant' },
   { image: jindal, title: 'Jindal Farm House' },
 ];
@@ -52,7 +52,7 @@ const residentialProjects = [
   { image: Gaurav, title: 'Mr. Gaurav Residence' },
   { image: Jitendra, title: 'Mr. Jitendra Residence' },
   { image: Shalimar, title: 'Shalimar One World Vista, Gomtinagar, Lucknow' },
-  { image: har, title: 'Mr. Harmeet Singh Residence' },
+  { image: har, title: 'Mr. Harmeet Singh Ji, Krishna Nagar Shubham City, Lucknow' },
 ];
 
 const Portfolio = () => {
