@@ -1,18 +1,23 @@
 import React from 'react';
 import { allservices } from '../export';
 import { motion } from 'framer-motion';
-
+import logo from '../assets/logo.png'; 
 const Quality = () => {
   return (
-    <section className="px-6 md:px-12 py-12 bg-gray-50">
-      {/* Section Header */}
-      <div className="text-center mb-10">
-        <h2 className="text-yellow-700 font-semibold text-sm uppercase tracking-wider">
-          Our Services Quality
-        </h2>
-        <h1 className="text-4xl font-bold text-gray-900">
-          Explore Our Services Range
+    <section className="px-6 md:px-12 py-12 bg-gray-50" id="services">
+      {/* Header with Logo + Text from Image */}
+      <div className="text-center mb-10 flex flex-col items-center">
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-16 h-16 mb-2"
+        />
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-800">
+          Radhika Architectural Services
         </h1>
+        <p className="text-sm sm:text-base italic text-gray-600 mt-1">
+          Design with Purpose Build with Precision
+        </p>
       </div>
 
       {/* Service Cards */}
@@ -46,3 +51,4 @@ const Quality = () => {
 };
 
 export default Quality;
+

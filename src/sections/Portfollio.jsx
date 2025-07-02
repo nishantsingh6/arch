@@ -1,48 +1,58 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { slideUpVariants, zoomInVariants } from './animation';
 
 // Your image imports...
-import upidr from '../assets/upidr.webp';
+import upidr from '../assets/upidr.jpg';
 import phdcci from '../assets/phdcc.jpg';
+import hos from '../assets/pandeypur.jpg';
+
 import Rajesh from '../assets/Rajesh.jpg';
 import Dalmau from '../assets/Dalmau.jpg';
+
 import oyo from '../assets/oyo_tI.avif';
 import ornate from '../assets/ornate.avif';
+import assh from '../assets/aashiya.avif';
 import citrus from '../assets/citrus.png';
 import lili from '../assets/proj9.jpg';
 import kukud from '../assets/kukud.avif';
+
+import doctor from '../assets/doctor.jpg';
 import jindal from '../assets/jindal.jpg';
+import bank  from '../assets/Bank.jpg';
+
 import judge from '../assets/judge.jpg';
 import Arvind from '../assets/Arvind.jpg';
 import Gaurav from '../assets/Gaurav.jpg';
 import Jitendra from '../assets/Jitendra.jpg';
+import Shalimar from '../assets/inter.jpg';
+import har from '../assets/harmeet.jpg';
 
 const governmentProjects = [
   { image: upidr, title: 'UPIDR' },
   { image: phdcci, title: 'PHDCCI' },
+  { image: hos, title: 'Pandeypur District Hospital, Varanasi' },
 ];
 
-const factoryProjects = [
-  { image: Rajesh, title: 'Rajesh Factory' },
+const commercialProjects = [
+  { image: Rajesh, title: 'Rajesh Masala & Raghav Bhog' },
   { image: Dalmau, title: 'Dalmau Food Plant' },
+  { image: doctor, title: 'Dr. Hriday Heart Hospital' },
+  { image: bank, title: 'Bank DBS Gomti Nagar, Lavanya Height' },
+  { image: citrus, title: 'Citrus Restaurant & Banquets Ashiyana, Lucknow' },
+  { image: oyo, title: 'Hotel Town House, Indira Nagar, Lucknow' },
+  { image: ornate, title: 'Hotel Ornate, Telibagh, Lucknow' },
+  { image: assh, title: 'Oyo Town House, Ashiyana, Lucknow' },
+  { image: lili, title: 'Hotel Lili Villas' },
+  { image: kukud, title: 'Kukkad Rangila The Family Restaurant' },
+  { image: jindal, title: 'Jindal Farm House' },
 ];
-
-const hotelProjects = [
-  { image: citrus, title: 'CITRUS RESTAURANT & BANQUETS', address: 'Lucknow Uttar Pradesh' },
-  { image: oyo, title: 'OYO TOWN HOUSE SECTOR C INDIRA NAGAR LUCKNOW' },
-  { image: ornate, title: 'HOTEL ORNATE TELIBAGH LUCKNOW' },
-  { image: lili, title: 'HOTEL LILI VILLAS' },
-  { image: kukud, title: 'KUKUD RANGILA THE FAMILY RESTAURANT' },
-];
-
-const farmHouseProjects = [{ image: jindal, title: 'Jindal Farm House' }];
 
 const residentialProjects = [
-  { image: judge, title: 'HONORABLE JUDGE' },
-  { image: Arvind, title: 'MR. ARVIND SINGH' },
-  { image: Gaurav, title: 'MR. GAURAV ' },
-  { image: Jitendra, title: 'MR. JITENDRA ' },
+  { image: judge, title: 'Honorable Judge Residence' },
+  { image: Arvind, title: 'Mr. Arvind Singh (Chief Manager UBI) ' },
+  { image: Gaurav, title: 'Mr. Gaurav Residence' },
+  { image: Jitendra, title: 'Mr. Jitendra Residence' },
+  { image: Shalimar, title: 'Shalimar One World Vista, Gomtinagar, Lucknow' },
+  { image: har, title: 'Mr. Harmeet Singh Residence' },
 ];
 
 const Portfolio = () => {
@@ -53,9 +63,8 @@ const Portfolio = () => {
   const renderProjectGrid = (projects) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
       {projects.map((project, idx) => (
-        <motion.div
+        <div
           key={idx}
-          variants={zoomInVariants}
           className="bg-white border rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer"
           onClick={() => handleImageClick(project.image)}
         >
@@ -67,9 +76,9 @@ const Portfolio = () => {
             />
           </div>
           <div className="p-4">
-            <h3 className="text-xl font-bold text-black text-center">{project.title}</h3>
+            <h3 className="text-xl text-black text-center">{project.title}</h3>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );
@@ -77,44 +86,29 @@ const Portfolio = () => {
   return (
     <div className="w-full bg-white text-black" id="projects">
       {/* Header */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={slideUpVariants}
-        className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6"
-      >
-        <h2 className="text-yellow-600 text-2xl font-semibold">PORTFOLIO</h2>
-        <h1 className="text-black uppercase text-[32px] md:text-[40px] font-bold text-center">
+      <div className="lg:w-[80%] w-[90%] mx-auto py-[60px] flex flex-col items-center justify-center gap-6">
+        <h2 className="text-yellow-600 text-2xl font-semibold">Our Portfolio</h2>
+        <h1 className="text-black uppercase text-[32px] md:text-[40px] font-normal text-center">
           Our Past Experiences
         </h1>
         <div className="w-[120px] h-[6px] bg-yellow-700" />
-      </motion.div>
+      </div>
 
       {/* Sections */}
-      <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
+      <div className="w-[90%] mx-auto pb-16">
         <h2 className="text-2xl font-semibold mb-4">Government Projects</h2>
         {renderProjectGrid(governmentProjects)}
-      </motion.div>
+      </div>
 
-      <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
-        <h2 className="text-2xl font-semibold mb-4">Factory Projects</h2>
-        {renderProjectGrid(factoryProjects)}
-      </motion.div>
+      <div className="w-[90%] mx-auto pb-16">
+        <h2 className="text-2xl font-semibold mb-4">Commercial Projects</h2>
+        {renderProjectGrid(commercialProjects)}
+      </div>
 
-      <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
-        <h2 className="text-2xl font-semibold mb-4">Hotel Projects</h2>
-        {renderProjectGrid(hotelProjects)}
-      </motion.div>
-
-      <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
-        <h2 className="text-2xl font-semibold mb-4">Farm House Projects</h2>
-        {renderProjectGrid(farmHouseProjects)}
-      </motion.div>
-
-      <motion.div initial="hidden" whileInView="visible" variants={zoomInVariants} className="w-[90%] mx-auto pb-16">
+      <div className="w-[90%] mx-auto pb-16">
         <h2 className="text-2xl font-semibold mb-4">Residential Projects</h2>
         {renderProjectGrid(residentialProjects)}
-      </motion.div>
+      </div>
 
       {/* Modal */}
       {selectedImage && (

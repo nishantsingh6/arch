@@ -2,7 +2,6 @@ import React from "react"
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
-import Services from "./sections/Services";
 import Portfollio from "./sections/Portfollio";
 import Working from "./sections/Working";
 import Contact from "./sections/Contact";
@@ -16,7 +15,6 @@ export default function App() {
   <Header/>
   <Hero/>
   <About/>
-  <Services/>
   <Quality/>
   <Portfollio/>
   <Working/>

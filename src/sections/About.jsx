@@ -5,7 +5,7 @@ const About = () => {
   const [showFullText, setShowFullText] = useState(false);
   const handleToggle = () => setShowFullText(prev => !prev);
 
-  const fullText = `जी नमस्कार! मेरा नाम आनंद सिंह है और मैं राधिका आर्किटेक्चरल सर्विसेज का संस्थापक हूँ! घर का निर्माण हो या किसी भी प्रकार का रेनोवेशन सम्बन्धी कोई कार्य हो सभी कार्यों को कुशलता पूर्वक किया जाता है एवं सिर्फ कार्य ही बल्कि हमेशा के लिए एक अच्छा मजबूत सम्बन्ध ! हमारे द्वारा सभी प्रकार की सेवाओं को बहुत ही उचित तरीके से प्रदान किया जाता है!`;
+  const fullText = `जी नमस्कार! मेरा नाम आनंद सिंह है और मैं राधिका आर्किटेक्चरल सर्विसेज का संस्थापक हूँ! हमारे द्वारा सभी प्रकार की सेवाओं को बहुत ही उचित तरीके से प्रदान किया जाता है! घर का निर्माण हो या किसी भी प्रकार का रेनोवेशन सम्बन्धी कोई कार्य हो सभी कार्यों को कुशलता पूर्वक किया जाता है एवं सिर्फ कार्य ही बल्कि हमेशा के लिए एक अच्छा मजबूत सम्बन्ध!`;
 
   const previewText = fullText.slice(0, 250) + '...';
 
@@ -32,6 +32,11 @@ const About = () => {
           </h1>
           <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
             {showFullText ? fullText : previewText}
+            {showFullText && (
+              <span className="text-yellow-700 font-medium italic block mt-4">
+                Long term good business relationship
+              </span>
+            )}
           </p>
           <button
             onClick={handleToggle}

@@ -4,11 +4,11 @@ import paint from  '../src/assets/painting.jpeg'
 import kitch from '../src/assets/kitch.jpg'
 import constrcuct from  '../src/assets/Arvind.jpg';
 import glass from  '../src/assets/glass.jpeg'
+import railing from '../src/assets/glass.avif'
+import upvc from '../src/assets/upvc.webp'
+import gmp from '../src/assets/gmp.webp'
 
-import { IoDocumentTextSharp } from "react-icons/io5";
-import { MdOutlineDesignServices } from "react-icons/md";
-import { FaRegBuilding } from "react-icons/fa";
-import { FaSitemap } from "react-icons/fa";
+
 
 export const allservices = [
   {
@@ -41,33 +41,20 @@ export const allservices = [
     title: "Aluminium, Steel, MS & Glass Work",
     about: "Fabrication and installation services for aluminium, steel, mild steel, and glass materials.",
   },
+  {
+    img:upvc,
+    title:"UPVC Door Window"
+  },
+  {
+    img:railing,
+    title:'Glass Railings'
+  },
+  {
+    img:gmp,
+    title:"GMP Doors"
+  }
+
 ];
 
 
-export const planning = [
-  {
-    icon: IoDocumentTextSharp,
-    title: "Planning",
-    about:
-      "We begin by understanding your vision and translating it into a strategic plan that balances creativity, functionality, and budget.",
-  },
-  {
-    icon: MdOutlineDesignServices,
-    title: "Design",
-    about:
-      "Our team crafts unique, innovative designs tailored to your needs—blending aesthetics with structural feasibility and modern trends.",
-  },
-  {
-    icon: FaRegBuilding,
-    title: "Building",
-    about:
-      "From foundation to finish, we bring designs to life using high-quality materials, skilled craftsmanship, and efficient project management.",
-  },
-  {
-    icon: FaSitemap,
-    title: "Finish",
-    about:
-      "We handle the final touches—detailing, inspection, and handover—ensuring every space is polished, functional, and ready to impress.",
-  },
-];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from '../assets/wall1.jpg';
+import img1 from '../assets/walldec.webp';
 import img2 from '../assets/wall2.webp';
 import img3 from '../assets/wall3.jpg';
 
@@ -33,7 +33,7 @@ const Working = () => {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-60 object-cover rounded-t"
+              className="w-full h-60 object-contain rounded-t"
             />
             <div className="p-4">
               <h3 className="font-semibold text-lg mb-2 text-gray-900">{item.title}</h3>
