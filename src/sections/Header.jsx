@@ -29,7 +29,7 @@ const Header = () => {
           onClick={closeMenu}
           className="cursor-pointer"
         >
-          <img src={logo} alt="RADHIKA Logo" className="h-16 md:h-20" />
+          <img src={logo} alt="RADHIKA Logo" className="h-16 md:h-16" />
         </Link>
 
         {/* Desktop Navigation */}
